@@ -1,4 +1,6 @@
 # Basketball Tournament Management System - BTMS
+_Note: this is a fun project_
+
 Suppose there are 16 basketball teams, each of which is comprised of 10 players, playing a tournament with 4 rounds as follows:
 
 | Round | # of Teams | # of Games |
@@ -25,15 +27,18 @@ There are 3 types of user with role-based access control as below:
 | View Website usage statistics                 | | | :white_check_mark: |
 
 
-_Note: this is a fun project_
+
 
 ## Terminologies and Definitions:
 
-  - **Average score of player**: sum of total scores divided by the number of gaems in which he played.
-  - **90th percentile average scores**: the scores which are better than 90 percent of all the others.
-  - **Scoreboard**: display of all games, final scores, current round result, winners/losers
-  - Website usage statistics:
-    + # of times each user logged into the system
+  - **Average score of player**:
+    + Sum of total scores divided by the number of gaems in which he played.
+  - **90th percentile average scores**:
+    + The scores which are better than 90 percent of all the others.
+  - **Scoreboard**:
+    + Display of all games, final scores, current round result, winners/losers
+  - **Website usage statistics**:
+    + Number of times each user logged into the system
     + How much time each user spends on the website totally
     + Which user is currently online (logged-in and viewing the site in a browser) 
 
