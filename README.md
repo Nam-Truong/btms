@@ -19,7 +19,7 @@ There are 3 types of user with role-based access control as below:
 |                                               | Player | Coach | Tournament Admin | 
 |-----------------------------------------------|--------|-------|------------------|
 | View scoreboard                               | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| View player's personal details                | :white_check_mark: _only self details_ | :white_check_mark: _only his team_ | :heavy_check_mark: |
+| View player's personal details                | :heavy_check_mark: _only self details_ | :heavy_check_mark: _only his team_ | :white_check_mark: |
 | View list of players of a team                | | :white_check_mark: _only his team_ | :heavy_check_mark: |
 | View list of 90-percentile avg-scores players | | :white_check_mark: _only his team_ | |
 | View Website usage statistics                 | | | :heavy_check_mark: |
