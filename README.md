@@ -43,3 +43,21 @@ There are 3 types of user with role-based access control as below:
     + Which user is currently online (logged-in and viewing the site in a browser) 
 
  
+## Development
+
+1. Postgres (PostgreSQL) 13.3
+2. Python 3.9.7
+3. Django 3.2.7
+
+
+### 1. Create a DEV database
+1. Log into PostgreSQL using default user `postgres`:
+  - `psql -U postgres`
+  _Note: enter your predefined password which was set during PostgreSQL installation_
+
+2. Enter the following commands:
+  ```
+  CREATE DATABASE btms;
+  CREATE ROLE btms WITH PASSWORD 'password' LOGIN;
+  GRANT ALL PRIVILEGES ON DATABASE btms TO btms;
+  ```
