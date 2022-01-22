@@ -53,6 +53,7 @@ There are 3 types of user with role-based access control as below:
 ### 1. Create a DEV database
 1. Log into PostgreSQL using default user `postgres`:
   - `psql -U postgres`
+  
   _Note: enter your predefined password which was set during PostgreSQL installation_
 
 2. Enter the following commands:
