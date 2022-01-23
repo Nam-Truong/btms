@@ -62,3 +62,6 @@ There are 3 types of user with role-based access control as below:
   CREATE ROLE btms WITH PASSWORD 'password' LOGIN;
   GRANT ALL PRIVILEGES ON DATABASE btms TO btms;
   ```
+
+## Reference
+https://docs.djangoproject.com/en/4.0/intro/tutorial02/
