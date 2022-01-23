@@ -36,9 +36,10 @@ class Games(models.Model):
     id = models.AutoField(primary_key=True)
     round = models.CharField(max_length=255, blank=True, null=True, db_index=True)
     playdate = models.DateTimeField(blank=True, null=True)
-    # team_1 = 
-    # team_2 = 
+    team_1 = models.ForeignKey(Teams, on_delete=models.SET_NULL, blank=True, null=True, related_name='team_1')
+    team_2 = models.ForeignKey(Teams, on_delete=models.SET_NULL, blank=True, null=True, related_name='team_2')
     
+    # Unique contraint of (team_1, team_2)
     class Meta:
         managed = True
         db_table = 'games'
@@ -53,7 +54,7 @@ class Users(models.Model):
     password = models.CharField(max_length=128, blank=True, null=True)
     height = models.BigIntegerField(blank=True, null=True)
 
-    team = models.OneToOneField(Teams)
+    team = models.ForeignKey(Teams, on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:
         ordering = ['last_name', 'first_name']
@@ -62,8 +63,8 @@ class Users(models.Model):
 
 class Scores(models.Model):
     id = models.AutoField(primary_key=True)
-    # game
-    # user
+    game = models.ForeignKey(Games, on_delete=models.SET_NULL, blank=True, null=True)
+    user = models.ForeignKey(Users, on_delete=models.SET_NULL, blank=True, null=True)
     scores = models.BigIntegerField(blank=True, null=True)
 
     class Meta:
@@ -76,8 +77,8 @@ class SiteUsage(models.Model):
     # action types: login, logout, start_view, end_view
     action_types = models.CharField(max_length=255, blank=True, null=True, db_index=True)
     
-    # user
-    # django_session
+    user = models.ForeignKey(Users, on_delete=models.SET_NULL, blank=True, null=True)
+    session_key = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
         managed = True
