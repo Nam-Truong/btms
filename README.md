@@ -21,9 +21,9 @@ There are 3 types of user with role-based access control as below:
 |                                               | Player | Coach | Tournament Admin | 
 |-----------------------------------------------|--------|-------|------------------|
 | View scoreboard                               | :white_check_mark: | :white_check_mark: | :white_check_mark: |
-| View player's personal details                | :white_check_mark: <br />_only self details_ | :white_check_mark: <br />_only his team_ | :white_check_mark: |
-| View list of players of a team                | | :white_check_mark: <br />_only his team_ | :white_check_mark: |
-| View list of 90-percentile avg-scores players | | :white_check_mark: <br />_only his team_ | |
+| View player's personal details                | :white_check_mark: <br />_only self details_ | :white_check_mark: <br />_only own team_ | :white_check_mark: |
+| View list of players of a team                | | :white_check_mark: <br />_only own team_ | :white_check_mark: |
+| View list of 90-percentile avg-scores players | | :white_check_mark: <br />_only own team_ | |
 | View Website usage statistics                 | | | :white_check_mark: |
 
 
@@ -53,8 +53,8 @@ There are 3 types of user with role-based access control as below:
 ### 1. Create a DEV database
 1. Log into PostgreSQL using default user `postgres`:
   - `psql -U postgres`
-  
-  _Note: enter your predefined password which was set during PostgreSQL installation_
+
+    _Note: enter your predefined password which was set during PostgreSQL installation_
 
 2. Enter the following commands:
   ```
