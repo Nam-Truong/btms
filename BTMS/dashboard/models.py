@@ -1,26 +1,9 @@
-from datetime import timezone
-import datetime
-from pyexpat import model
+# from asyncio.windows_events import NULL
+# from datetime import timezone
+# import datetime
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
-# Create your models here.
-
-# For referene only
-# class Question(models.Model):
-#     question_text = models.CharField(max_length=200)
-#     pub_date = models.DateTimeField('date published')
-
-#     def was_published_recently(self):
-#         return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
-
-
-# class Choice(models.Model):
-#     question = models.ForeignKey(Question, on_delete=models.CASCADE)
-#     choice_text = models.CharField(max_length=200)
-#     votes = models.IntegerField(default=0)
-
-
-# Main Models
 
 
 class Teams(models.Model):
@@ -32,20 +15,23 @@ class Teams(models.Model):
         managed = True
         db_table = 'teams'
 
+
 class Games(models.Model):
     id = models.AutoField(primary_key=True)
-    round = models.CharField(max_length=255, blank=True, null=True, db_index=True)
+    round = models.CharField(max_length=255, blank=True, null=True,
+                             db_index=True)
     playdate = models.DateTimeField(blank=True, null=True)
-    team_1 = models.ForeignKey(Teams, on_delete=models.SET_NULL, blank=True, null=True, related_name='team_1')
-    team_2 = models.ForeignKey(Teams, on_delete=models.SET_NULL, blank=True, null=True, related_name='team_2')
-    
-    # Unique contraint of (team_1, team_2)
+    team_1 = models.ForeignKey(Teams, on_delete=models.SET_NULL, blank=True,
+                               null=True, related_name='team_1')
+    team_2 = models.ForeignKey(Teams, on_delete=models.SET_NULL, blank=True,
+                               null=True, related_name='team_2')
+
     class Meta:
         managed = True
         db_table = 'games'
 
 
-class Users(models.Model):
+class Users(AbstractUser):
     id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=255, blank=True, null=True, db_index=True)
     last_name = models.CharField(max_length=255, blank=True, null=True, db_index=True)
@@ -61,6 +47,7 @@ class Users(models.Model):
         managed = True
         db_table = 'users'
 
+
 class Scores(models.Model):
     id = models.AutoField(primary_key=True)
     game = models.ForeignKey(Games, on_delete=models.SET_NULL, blank=True, null=True)
@@ -70,6 +57,7 @@ class Scores(models.Model):
     class Meta:
         managed = True
         db_table = 'scores'
+
 
 class SiteUsage(models.Model):
     id = models.AutoField(primary_key=True)
