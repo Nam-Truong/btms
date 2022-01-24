@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="0" skipped="0" tests="1" time="2.569" timestamp="2022-01-24T03:12:28.561416" hostname="Nams-MacBook-Pro.local"><testcase classname="dashboard.tests.test_auth.AuthTestCase" name="test_authenticate_user" time="0.615" /></testsuite></testsuites>
