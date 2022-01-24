@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.local
+
 # C extensions
 *.so
 
@@ -127,3 +128,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+BTMS/reports
+BTMS/.DS_Store
