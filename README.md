@@ -63,5 +63,14 @@ There are 3 types of user with role-based access control as below:
   GRANT ALL PRIVILEGES ON DATABASE btms TO btms;
   ```
 
+3. To simulate data of players, coaches, admin, games, scores, etc., use the following commands:
+  ```
+  cd BTMS
+  python3 manage.py simulate_db 4
+  ```
+  _Note: The tournament has totally 4 rounds. So, the above command will simulate entire tournament results, i.e. the tournament ended. However, if execute **simulate_db 2**, it will simuate data showing that the tournament has just completed the 2nd round._
+
+4. To delete all database data, use this command:
+  `python3 manage.py delete_db`
 ## Reference
 https://docs.djangoproject.com/en/4.0/intro/tutorial02/
